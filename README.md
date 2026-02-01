@@ -58,5 +58,7 @@ Yapılan testlerde, modelin genel trendi yakaladığı, ancak veri setinde daha 
 **3.3. Karar Destek Grafikleri**
 Kullanıcıların modelin tutarlılığını analiz edebilmesi için sisteme görselleştirme araçları eklenmiştir. Son 15 günün talep grafiği ve haftanın günlerine göre yoğunluk dağılımını gösteren pasta grafiği, yöneticilere stratejik bilgi sunmaktadır. Örneğin, pasta grafiği analizlerinde, Cuma günleri sevilen yemekler çıksa dahi toplam tüketimin diğer günlere göre %20-30 oranında düşük olduğu net bir şekilde görülmüştür.
 
-![Grafikler]()
+![Grafikler](grafikler.png)
+
+**Not: Bu proje akademik bir çalışma olduğu için kaynak kodları kapalı tutulmaktadır. Teknik mülakatlarda kod yapısı ve mimarisi hakkında detaylı bilgi sunulabilir.**
 
