@@ -49,8 +49,14 @@ Modelin başarısı, tahmin edilen sayı ile gerçek sayı arasındaki farkın m
 Sistemin güvenilirliğini test etmek amacıyla, veri setinden rastgele seçilen 2 haftalık veri silinmiş ve model geri kalan verilerle eğitilmiştir. Daha sonra silinen bu haftaların menüleri sisteme girilerek tahmin yaptırılmış ve gerçek sonuçlarla kıyaslanmıştır.
 Yapılan testlerde, modelin genel trendi yakaladığı, ancak veri setinde daha önce hiç bulunmayan (unique) yeni bir yemek türü menüye eklendiğinde, sistemin bu yemeği tanıyamadığı için "Dropdown" listesinde gösteremediği (Soğuk Başlangıç / Cold Start sorunu) gözlemlenmiştir. Bu durum, veri seti büyüdükçe ve yemek çeşitliliği arttıkça kendiliğinden çözülecek bir kısıtlılıktır.
 
-![sekil3]()
+![sekil3](testData1MAEimg.png)
 Şekil 3: Eğitim veri setinden 1 haftalık verinin çıkarılmasıyla elde edilen MAE değeri..
 
 ![sekil4](testData1PredictImg.png)
 Şekil 4: Test için Çıkarılan 1 haftanın tahmin sonuçları .
+
+**3.3. Karar Destek Grafikleri**
+Kullanıcıların modelin tutarlılığını analiz edebilmesi için sisteme görselleştirme araçları eklenmiştir. Son 15 günün talep grafiği ve haftanın günlerine göre yoğunluk dağılımını gösteren pasta grafiği, yöneticilere stratejik bilgi sunmaktadır. Örneğin, pasta grafiği analizlerinde, Cuma günleri sevilen yemekler çıksa dahi toplam tüketimin diğer günlere göre %20-30 oranında düşük olduğu net bir şekilde görülmüştür.
+
+![Grafikler]()
+
