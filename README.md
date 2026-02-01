@@ -29,3 +29,28 @@ Bu çalışmada tahminleme algoritması olarak Random Forest Regressor (Rastgele
   3.	Parametreler: Çalışmada ağaç sayısı (n_estimators) 100 olarak belirlenmiştir. Bu, modelin her tahmin için arka planda 100 farklı senaryo çalıştırıp en optimum sonucu ürettiği anlamına gelir.
 **2.5. Sistem Mimarisi**
 Geliştirilen sistem, Python programlama dili ve Flask web çatısı (framework) kullanılarak web tabanlı bir uygulama haline getirilmiştir. Arayüzde, kullanıcıların geçmiş verilerden otomatik olarak çekilen yemekleri seçebileceği dinamik "Dropdown" menüler kullanılmıştır.
+
+![sekil1](sekil1.png)
+Şekil 1: Menü planlama ve tahminleme arayüzü.
+
+Ayrıca sistem, kullanıcıların kendi Excel veri setlerini yükleyip modeli yeniden eğitebilecekleri esnek bir yapıya sahiptir.
+
+![sekil2](sekil2.png)
+Şekil 2: Veri seti yönetimi ve model eğitimi modülü.
+
+
+**3. BULGULAR VE TARTIŞMA**
+**3.1. Model Performansı**
+Modelin başarısı, tahmin edilen sayı ile gerçek sayı arasındaki farkın mutlak değerlerinin ortalaması olan MAE (Mean Absolute Error) metriği ile ölçülmüştür.
+ **•	İlk Aşama (Ham Veri):** Sadece tarih ve yemek bilgileriyle yapılan eğitim sonucunda MAE değeri 138 olarak hesaplanmıştır.
+ **•	İkinci Aşama (Öznitelik Mühendisliği):** "Akademik Durum" sütunu eklendikten sonra yapılan eğitimde MAE değeri 118’e düşmüştür.
+   Bu 20 birimlik iyileşme, üniversite yemekhanelerinde talebin sadece "ne yemek çıktığına" değil, "o günün akademik takvimdeki yerine" de sıkı sıkıya bağlı olduğunu kanıtlamaktadır.
+**3.2. Senaryo Bazlı Doğrulama (Hold-out Validation)**
+Sistemin güvenilirliğini test etmek amacıyla, veri setinden rastgele seçilen 2 haftalık veri silinmiş ve model geri kalan verilerle eğitilmiştir. Daha sonra silinen bu haftaların menüleri sisteme girilerek tahmin yaptırılmış ve gerçek sonuçlarla kıyaslanmıştır.
+Yapılan testlerde, modelin genel trendi yakaladığı, ancak veri setinde daha önce hiç bulunmayan (unique) yeni bir yemek türü menüye eklendiğinde, sistemin bu yemeği tanıyamadığı için "Dropdown" listesinde gösteremediği (Soğuk Başlangıç / Cold Start sorunu) gözlemlenmiştir. Bu durum, veri seti büyüdükçe ve yemek çeşitliliği arttıkça kendiliğinden çözülecek bir kısıtlılıktır.
+
+![sekil3]()
+Şekil 3: Eğitim veri setinden 1 haftalık verinin çıkarılmasıyla elde edilen MAE değeri..
+
+![sekil4]()
+Şekil 4: Test için Çıkarılan 1 haftanın tahmin sonuçları .
