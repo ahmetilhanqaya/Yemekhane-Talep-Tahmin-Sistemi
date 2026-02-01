@@ -52,5 +52,5 @@ Yapılan testlerde, modelin genel trendi yakaladığı, ancak veri setinde daha 
 ![sekil3]()
 Şekil 3: Eğitim veri setinden 1 haftalık verinin çıkarılmasıyla elde edilen MAE değeri..
 
-![sekil4]()
+![sekil4](testData1PredictImg.png)
 Şekil 4: Test için Çıkarılan 1 haftanın tahmin sonuçları .
